@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="initial-scale=1">
+  <title>Email Signature Generator</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+
+  <input type="checkbox" id="hideform">
+  <label for="hideform">
+    Form
+  </label>
+
+  <form>
+    <h1 class="badge">
+      Multivista
+      <br>
+      <span>
+        Email Signature Generator
+      </span>
+    </h1>
+
+    <p style="line-height:1.3em; padding: 1em 0;">
+      Fill in the fields below.
+      <br>
+      Press "Copy to Clipboard"
+      <br>
+      Paste into the signature editor of your email application.
+      <br>
+      NOTE: The spacing and sizes in the browser may not look correct but will when you paste it in.
+    </p>
+
+
+
+
+    <input type="text" class="firstname" name="firstname" placeholder="First Name" required="">
+    <input type="text" class="lastname" name="lastname" placeholder="Last Name">
+    <input type="text" class="position" placeholder="Job Title">
+    <input type="tel" class="telephone" placeholder="Office Phone">
+    <input type="tel" class="mobile" placeholder="Mobile Phone">
+    <input type="tel" class="fax" placeholder="Fax">
+    <input type="text" class="address" placeholder="Address">
+
+
+    <h3>Social Media and App Links</h3>
+    <div class="social-selector options">
+
+      <input type="radio" name="social-selector" id="social-1">
+      <label for="social-1">Social Only</label>
+
+      <input type="radio" name="social-selector" id="social-2">
+      <label for="social-2">Both</label>
+
+      <input type="radio" name="social-selector" id="social-3">
+      <label for="social-3">App Links Only</label>
+
+      <input type="radio" name="social-selector" id="nosocial" checked="">
+      <label for="nosocial">None</label>
+      <span></span></div>
+
+
+    <a href="javascript:location.reload(true)">Clear Form</a>
+
+  </form>
+
+
+
+  <section class="preview">
+    <input type="radio" name="preview" id="normal-view" checked="">
+    <label for="normal-view">Normal</label>
+
+    <input type="radio" name="preview" id="text-view">
+    <label for="text-view">Text</label>
+
+    <input type="radio" name="preview" id="html-view">
+    <label for="html-view">Code</label>
+
+
+    <section class="sig-section standard">
+      <!--use inline styling within the #standard-target div so the output signature can be copy and pasted by the user and maintain style. any classes are for reference in javascript only-->
+      <div class=" sig-container" id="standard-target">
+        <table>
+
+          <tbody>
+            <tr>
+
+              <td style="text-align:center;">
+
+                <img src="img/Email-Signature-Generator_Logo_110px.png">
+                <br>
+                <img src="img/Email-Signature-Generator_Hexagon_90px.png">
+
+              </td>
+
+              <td>
+
+                <div style="
+          text-align:center;
+          display:inline-block;
+          position:relative;
+          margin: 0px 11px 0px 8px;">
+                  <img src="img/vertical-orange-line-150px-whitespace.png">
+                </div>
+
+              </td>
+
+              <td>
+
+                <p class="fullname-container" style="
+          color:#0d104d;
+          font-family:Gill Sans STD, Arial, sans-serif;
+          font-size:11pt;
+          font-style:normal;
+          font-variant:normal;
+          font-weight:bold;
+          text-transform:uppercase;
+          margin:0;">
+
+                  <span class="firstname-container">
+                    Firstname
+                  </span>
+
+                  <span class="lastname-container">
+                    Lastname
+                  </span>
+
+                </p>
+
+                <p class="position-container" style="
+          font-family:Gill Arial, sans STD Light, Arial, sans-serif;
+          font-size:9pt;
+          font-style:italic;
+          font-weight:normal;
+          margin: 0;">
+
+                  <span class="position">
+                    Job Title
+                  </span>
+
+                </p>
+
+                <p class="contact-container" style="color: rgb(13, 16, 77); font-family: Gill Sans STD Light, Arial, sans-serif; font-size: 9pt; font-style: normal; font-weight: bold; margin: 0px; display: none;">
+
+                  <span class="telephone-container" style="display: none;">
+                    Office
+                    <a href="https://multivistawebsupport.github.io/email-signature-generator/" style="
+              color:#0d104d;
+              font-family:Gill Sans STD Light, Arial, sans-serif;
+              font-size:9pt;
+              font-style:normal;
+              font-weight:normal;
+              margin:0;
+              text-decoration: none;">
+                    </a>
+                    <br>
+                  </span>
+
+                  <span class="mobile-container">
+                    Mobile
+                    <a href="https://multivistawebsupport.github.io/email-signature-generator/" style="
+              color:#0d104d;
+              font-family:Gill Sans STD Light, Arial, sans-serif;
+              font-size:9pt;
+              font-style:normal;
+              font-weight:normal;
+              margin:0;
+              text-decoration: none;">
+                    </a>
+                    <br>
+                  </span>
+
+                  <span class="fax-container" style="display: none;">
+                    Fax
+                    <a href="https://multivistawebsupport.github.io/email-signature-generator/" style="
+              color:#0d104d;
+              font-family:Gill Sans STD Light, Arial, sans-serif;
+              font-size:9pt;
+              font-style:normal;
+              font-weight:normal;
+              margin:0;
+              text-decoration: none;">
+                    </a>
+                  </span>
+
+                </p>
+
+                <div>
+                  <a href="https://www.multivista.com/" style="
+          color:#0d104d;
+          font-family:Gill Sans STD Light, Arial, sans-serif;
+          font-size:9pt;
+          font-style:normal;
+          font-weight:normal;
+          text-decoration:underline;
+          margin:0;">
+                    www.multivista.com
+                  </a>
+                </div>
+
+                <span class="address-container" style="display: none;">
+                  <p style="color:#0d104d;
+            font-family:Gill Sans STD Light, Arial, sans-serif;
+            font-size:9pt;
+            font-style:normal;
+            font-weight:normal;
+            margin:0;">
+                  </p>
+                </span>
+
+                <div class="social" style="display: none;">
+
+                  <div class="social social-1" style="display: none;">
+
+                    <a href="https://facebook.com/multivista" title="Facebook" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_Facebook_25px.png">
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/multivista/" title="LinkedIn" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_LinkedIn-25px.png">
+                    </a>
+
+                    <a href="https://twitter.com/multivista" title="Twitter" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_Twitter_25px.png">
+                    </a>
+
+                  </div>
+
+                  <div class="social social-2" style="display: none;">
+
+                    <a href="https://facebook.com/multivista" title="Facebook" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_Facebook_25px.png">
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/multivista/" title="LinkedIn" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_LinkedIn-25px.png">
+                    </a>
+
+                    <a href="https://twitter.com/multivista" title="Twitter" target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_Twitter_25px.png">
+                    </a>
+
+                    <a href="https://itunes.apple.com/us/app/multivista/id763141884" title="Apple App Store" target="_blank"
+                      style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_AppStore_25px.png">
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.multivista.mvphoto" title="Google Play Store"
+                      target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_GooglePlay_25px.png">
+                    </a>
+
+                  </div>
+
+                  <div class="social social-3" style="display: none;">
+
+                    <a href="https://itunes.apple.com/us/app/multivista/id763141884" title="Apple App Store" target="_blank"
+                      style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_AppStore_25px.png">
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.multivista.mvphoto" title="Google Play Store"
+                      target="_blank" style="
+              text-decoration: none;
+              display: inline-block;">
+                      <img src="img/Email-Signature-Generator_GooglePlay_25px.png">
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <span style="
+            font-size: 7pt;">
+                  --
+                  <br>
+                  The contents of this communication, including any attachment(s), are confidential and may be
+                  privileged. If you are not the intended recipient (or are not receiving this communication on behalf
+                  of the intended recipient), please notify the sender immediately and delete or destroy this
+                  communication without reading it, and without making, forwarding or retaining any copy or record of
+                  it or its contents. Thank you. Note: We have taken precautions against viruses, but take no
+                  responsibility for loss or damage caused by any virus present. The above-named person proudly
+                  represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and
+                  products in the location or region indicated. Titles such as principal, managing principal, regional
+                  partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but
+                  rather the licensees status as a licensed vendor. For more information on the licensee structure,
+                  visit www.multivista.com/licensedvendors
+                  <br>
+                  --
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+
+      <a class="btn plaintext" data-clipboard-target="#standard-target">copy to clipboard</a>
+
+    </section>
+
+    <section class=" plaintext sig-section">
+      <div class=" sig-container" id="text-target">
+
+        <p class="fullname-container"><span class="firstname-container">Firstname</span> <span class="lastname-container">Lastname</span></p>
+        <p></p>
+
+        <span class="position-container">
+          <span class="position">
+          </span>
+        </span>
+
+        <p class="contact-container" style="display: none;">
+          <span class="telephone-container" style="display: none;">Office <a></a><br></span>
+          <span class="mobile-container">Mobile <a></a><br></span>
+          <span class="fax-container" style="display: none;">Fax <a></a><br></span>
+        </p>
+
+        <span>
+          www.multivista.com
+        </span>
+
+        <span class="address-container" style="display: none;">
+          <p></p>
+        </span>
+
+        <div class="social" style="display: none;">
+          <div class="social social-1" style="display: none;">
+            facebook.com/multivista | linkedin.com/company/multivista | twitter @multivista</div>
+          <div class="social social-2" style="display: none;">
+            facebook.com/multivista | linkedin.com/company/multivista | twitter @multivista
+            <br>
+            itunes.apple.com/us/app/multivista/id763141884 |
+            play.google.com/store/apps/details?id=com.multivista.mvphoto
+          </div>
+          <div class="social social-3" style="display: none;">
+            itunes.apple.com/us/app/multivista/id763141884 |
+            play.google.com/store/apps/details?id=com.multivista.mvphoto
+          </div>
+        </div>
+
+      </div>
+
+      <a class="btn plaintext" data-clipboard-target="#text-target">
+        copy to clipboard
+      </a>
+
+    </section>
+
+    <section class="sig-section html">
+      <div class="sig-container" id="html">
+
+        <code class="form-control" rows="10">Type something in the editor</code>
+
+      </div>
+
+      <a class="btn plaintext" data-clipboard-target="#html">
+        copy to clipboard
+      </a>
+
+    </section>
+
+  </section>
+
+  <script src="js/clipboard.min.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    new Clipboard('.btn');
+  </script>
+
+
+</body>
+
+</html>
