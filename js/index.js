@@ -47,16 +47,31 @@ $("input.position").on("change keyup paste", function () {
   updateHtmlSigRaw()
 });
 
+$.fn.inputFilter = function(inputFilter) {
+  return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+    if (inputFilter(this.value)) {
+      this.oldValue = this.value;
+      this.oldSelectionStart = this.selectionStart;
+      this.oldSelectionEnd = this.selectionEnd;
+    } else if (this.hasOwnProperty("oldValue")) {
+      this.value = this.oldValue;
+      this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+    }
+  });
+};
+
+$("input.telephone, input.mobile, input.fax").inputFilter(function(value) {
+  return /^\d*$/.test(value); });
+
 // OFFICE PHONE
 $(".telephone-container").hide();
 
 $("input.telephone").on("change keyup paste", function () {
-  var telephone = $(this).val().split(" ").join("-").toUpperCase();
+  var telephone = $(this).val().replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
   if (telephone) {
     $(".contact-container").show();
     $(".telephone-container").show();
     $(".telephone-container a").html(telephone)
-
     $(".telephone-container a").attr("href", "tel:" + telephone);
 
 
@@ -69,7 +84,7 @@ $("input.telephone").on("change keyup paste", function () {
 
 // MOBILE PHONE
 $("input.mobile").on("change keyup paste", function () {
-  var mobile = $(this).val().split(" ").join("-").toUpperCase();
+  var mobile = $(this).val().replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
   if (mobile) {
     $(".mobile-container").show();
     $(".contact-container").show();
@@ -86,7 +101,7 @@ $("input.mobile").on("change keyup paste", function () {
 $(".fax-container").hide();
 
 $("input.fax").on("change keyup paste", function () {
-  var fax = $(this).val().split(" ").join("-").toUpperCase();
+  var fax = $(this).val().replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
   if (fax) {
     $(".fax-container").show();
     $(".contact-container").show();
@@ -106,7 +121,7 @@ $("input.address").on("change keyup paste", function () {
   var address = $(this).val();
   if (address) {
     $(".address-container").show();
-    $(".address-container p").html(address);
+    $(".address-container").html(address);
   } else {
     $(".address-container").hide();
   }
